@@ -1,0 +1,1 @@
+INSERT INTO Pelicula VALUES (1,"La forma del agua","B","Español",11,"Cinemex Universidad (CDMX)", "12:00 pm",45,"2018-03-22" );
