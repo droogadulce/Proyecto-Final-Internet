@@ -60,13 +60,13 @@ h3 {
 }
 
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
-	width: 70%;
+	width: 50%;
+	height: 90%;
 	margin: auto;
 }
 </style>
 </head>
 <body>
-
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
@@ -75,7 +75,6 @@ h3 {
 			<li data-target="#myCarousel" data-slide-to="2"></li>
 			<li data-target="#myCarousel" data-slide-to="3"></li>
 		</ol>
-
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox">
 			<div class="item active">
@@ -110,7 +109,6 @@ h3 {
 				</div>
 			</div>
 		</div>
-
 		<!-- Left and right controls -->
 		<a class="left carousel-control" href="#myCarousel" role="button"
 			data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"
@@ -122,6 +120,7 @@ h3 {
 		</a>
 	</div>
 
+
 	<span style="float: right">
 	<a href="?lang=en">EN</a> 
 	| 
@@ -129,6 +128,33 @@ h3 {
 	</span>
 	<!-- code es lo de internacionalizacion -->
 	<h2>
+
+	<h3>Lista de películas</h3>
+
+<div>
+	<c:if test="${!empty listaPeliculas}">
+		<table class="table table-hover">
+			<tr>
+				<th scope="col">Película</th>
+				<th scope="col">Nombre</th>
+			</tr>
+			<!-- lista de documentos que esta abajo 
+se mando como documentList
+cada uno de los elementos del documentList es un document
+-->
+			<c:forEach items="${listaPeliculas}" var="peli">
+				<tr>
+					<td width="250px" scope="row">${peli.idPelicula}</td>
+					<td width="100px"><a
+						href="${pageContext.request.contextPath}/indexFilm/${peli.idPelicula}.html">
+							${peli.nombre}</a></td>
+				</tr>
+			</c:forEach>
+		</table>
+	</c:if>
+</div class="jumbotron">	
+		<!-- code es lo de internacionalizacion -->
+	<h2 class="display-4">
 		<spring:message code="label.title" />
 	</h2>
 
@@ -136,8 +162,7 @@ h3 {
 		<spring:message code="label.objetivo" />
 	</h3>
 	<!-- commandname es el bean que se va a enviar 
-	multipart/form-data se usa con el upload
--->
+	multipart/form-data se usa con el upload-->
 	<form:form method="post" action="save.html" commandName="document"
 		enctype="multipart/form-data">
 		<!-- errores que se van a aplicar -->
@@ -203,7 +228,7 @@ cada uno de los elementos del documentList es un document
 			<c:forEach items="${peliculasList}" var="pelicula">
 				<tr>
 					<td width="100px">${pelicula.name}</td>
-					<td width="250px">${document.description}</td>
+					<td width="250px">${pelicula.description}</td>
 					<td width="20px">
 						<!-- se llama al control con un parametro --> <a
 						href="${pageContext.request.contextPath}/download/${pelicula.id}.html">
@@ -221,12 +246,6 @@ cada uno de los elementos del documentList es un document
 			</c:forEach>
 		</table>
 	</c:if>
-
-	<!-- se llama al control con un parametro -->
-	<h2>
-		<a href="${pageContext.request.contextPath}/verPeliculaDefault.html">
-			Ver Película</a>
-	</h2>
 
 	<script type="text/javascript">
 		$(document).ready(function() {
