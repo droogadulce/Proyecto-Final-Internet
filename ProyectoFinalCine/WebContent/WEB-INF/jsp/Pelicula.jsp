@@ -46,6 +46,11 @@
 	color: #ff0000;
 	font-style: italic;
 }
+.resize {
+	width:30%;
+  	height:30%;
+  	float: right;
+}
 </style>
 
 
@@ -54,6 +59,7 @@
 	<div class="container">
 		<h1>Detalle de la Película</h1>
 		<hr>
+		<img src="${pageContext.request.contextPath}/img/${pelicula.idPelicula}.jpg" class="img-thumbnail resize" alt="${pelicula.nombre}" />
 		<p>
 			<b class="text-info">Nombre Película: </b> ${pelicula.nombre}
 		</p>

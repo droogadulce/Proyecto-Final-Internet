@@ -3,6 +3,8 @@ package Control;
 import java.util.Map;
 import Pojo.Document;
 import servicio.DocumentService;
+import servicio.PeliculaService;
+
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,8 @@ public class DocumentController {
 	 * */
 	@Autowired
 	private DocumentService documentService;
+	@Autowired
+	private PeliculaService peliculaService;
 	
 	/*
 	 * Regresa un string, regresa una vista
@@ -42,6 +46,7 @@ public class DocumentController {
 			 * Gracias al autowired, se puede llamar a la instancia documentService
 			 * */
 			map.put( "peliculasList", documentService.list() ); //campo, valor -> bean, el contenido
+			map.put("listaPeliculas", peliculaService.list());
 		} catch( Exception e ) {
 			e.printStackTrace();
 		}

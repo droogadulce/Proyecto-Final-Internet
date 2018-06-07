@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -76,9 +77,9 @@ public class PeliculaController {
 	 * @return
 	 */
 	@RequestMapping("/indexFilm/{idPelicula}")
-	public @ResponseBody String showUserFilm( @RequestParam("id") String id, ModelMap model, HttpServletRequest request ) {
+	public String showUserFilm( @PathVariable( "idPelicula" ) Integer idPelicula, ModelMap model, HttpServletRequest request ) {
 		pelicula = new Pelicula();
-		pelicula = peliculaService.getPelicula(id);
+		pelicula = peliculaService.getPelicula(String.valueOf(idPelicula));
 		model.addAttribute( "pelicula", pelicula );
 		return "Pelicula";
 	}

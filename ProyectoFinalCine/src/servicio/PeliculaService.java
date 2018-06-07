@@ -1,5 +1,7 @@
 package servicio;
 
+import java.util.List;
+
 import Pojo.Pelicula;
 
 /**
@@ -9,4 +11,5 @@ import Pojo.Pelicula;
  */
 public interface PeliculaService {
 	public Pelicula getPelicula(String id);
+	public List<Pelicula> list();
 }

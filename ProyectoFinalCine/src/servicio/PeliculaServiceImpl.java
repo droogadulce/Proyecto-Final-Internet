@@ -36,4 +36,9 @@ public class PeliculaServiceImpl implements PeliculaService {
 	public Pelicula getPelicula(String id) {
 		return peliculaDAO.getPelicula(id);
 	}
+	
+	//@Override
+	public List<Pelicula> list() {
+		return peliculaDAO.list();
+	}
 }
