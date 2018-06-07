@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -148,12 +149,11 @@
 </head>
 <body onload="renderSeatplan(getSeatInfo(12,16));">
 	<div class="container">
-		<h1>Selecciona tus asientos</h1>
+		<h1><spring:message code="label.seleccionasiento" /></h1>
 		<canvas id="seatplan" width="640" height="480"></canvas>
-		<br> <b class="text-info">Selecciona el número de boletos a
-			comprar:</b> <br>
+		<br> <b class="text-info"><spring:message code="label.selnumboletos" /></b> <br>
 		<form method="POST" action="peticion.html">
-			<p class="text-info">Adulto ($73.00 c/u):</p>
+			<p class="text-info"><spring:message code="label.adulto" /></p>
 			<select id="adulto" name="adulto" onchange="sumarAsientos('adulto')" >
 				<option value="0">0</option>
 				<option value="1">1</option>
@@ -163,7 +163,7 @@
 				<option value="5">5</option>
 				<option value="6">6</option>
 			</select> <br>
-			<p class="text-info">Mayor 60 años ($64.00 c/u):</p>
+			<p class="text-info"><spring:message code="label.mayor" /></p>
 			<select id="mayor" name="mayor" onchange="sumarAsientos('mayor')">
 				<option value="0">0</option>
 				<option value="1">1</option>
@@ -173,7 +173,7 @@
 				<option value="5">5</option>
 				<option value="6">6</option>
 			</select> <br>
-			<p class="text-info">Menor ($64.00 c/u):</p>
+			<p class="text-info"><spring:message code="label.menor" /></p>
 			<select id="menor" name="menor" onchange="sumarAsientos('menor')">
 				<option value="0">0</option>
 				<option value="1">1</option>
@@ -182,11 +182,11 @@
 				<option value="4">4</option>
 				<option value="5">5</option>
 				<option value="6">6</option>
-			</select> <br> <b class="text-info">Número de boletos:</b>
+			</select> <br> <b class="text-info"><spring:message code="label.numeroboletos" /></b>
 			<p id="numAsientos" name="numAsientos"></p>
-			<b class="text-info">Asientos sugeridos: </b><br>
+			<b class="text-info"><spring:message code="label.asientossugeridos" /></b><br>
 			<p id="asientosSeleccionados" name="asientosSeleccionados"></p>
-			<b class="text-info">Total:</b> <br>
+			<b class="text-info"><spring:message code="label.total" /></b> <br>
 			<p id="total" name="total">$0</p>
 			<input class="btn btn-primary" type="submit" value="Continuar">
 		</form>

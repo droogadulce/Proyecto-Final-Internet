@@ -122,7 +122,11 @@ h3 {
 		</a>
 	</div>
 
-
+	<span style="float: right">
+	<a href="?lang=en">EN</a> 
+	| 
+	<a href="?lang=es_MX">ES</a>
+	</span>
 	<!-- code es lo de internacionalizacion -->
 	<h2>
 		<spring:message code="label.title" />
