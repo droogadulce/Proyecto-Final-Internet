@@ -9,6 +9,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import Pojo.Compra;
@@ -59,10 +61,24 @@ public class PeliculaController {
 	 * @param request
 	 * @return
 	 */
-	@RequestMapping("/index")
+	@RequestMapping("/verPeliculaDefault")
 	public String showUserForm( ModelMap model, HttpServletRequest request ) {
 		pelicula = new Pelicula();
 		pelicula = peliculaService.getPelicula("1");
+		model.addAttribute( "pelicula", pelicula );
+		return "Pelicula";
+	}
+	
+	/**
+	 * regresa la vista de la película a mostrar.
+	 * @param model
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping("/indexFilm/{idPelicula}")
+	public @ResponseBody String showUserFilm( @RequestParam("id") String id, ModelMap model, HttpServletRequest request ) {
+		pelicula = new Pelicula();
+		pelicula = peliculaService.getPelicula(id);
 		model.addAttribute( "pelicula", pelicula );
 		return "Pelicula";
 	}

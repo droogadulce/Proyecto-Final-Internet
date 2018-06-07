@@ -29,7 +29,7 @@ public class DocumentController {
 	 * Regresa un string, regresa una vista
 	 * Map es un diccionario (campo, valor)
 	 * */
-	//@RequestMapping("/index")
+	@RequestMapping("/index")
 	public String index( Map<String, Object> map ) {
 		try {
 			/* Le pasa info a la vista.
@@ -41,12 +41,12 @@ public class DocumentController {
 			 * Busca en la base de datos los documentos
 			 * Gracias al autowired, se puede llamar a la instancia documentService
 			 * */
-			map.put( "documentList", documentService.list() ); //campo, valor -> bean, el contenido
+			map.put( "peliculasList", documentService.list() ); //campo, valor -> bean, el contenido
 		} catch( Exception e ) {
 			e.printStackTrace();
 		}
 		// regresamos la vista documents
-		return "Pelicula";
+		return "Inicio";
 	}
 
 	@RequestMapping( value = "/save", method = RequestMethod.POST )
