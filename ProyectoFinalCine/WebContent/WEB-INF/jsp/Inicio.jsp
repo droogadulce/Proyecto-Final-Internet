@@ -119,15 +119,20 @@ h3 {
 			<span class="sr-only">Next</span>
 		</a>
 	</div>
+	
+	<span style="float:right;">
+	<a href="?lang=en">EN</a> |
+	<a href="?lang=es_MX">MX</a>
+	</span>
 
-	<h3>Lista de películas</h3>
+	<h3><spring:message code="label.listapelicula" /></h3>
 
 <div>
 	<c:if test="${!empty listaPeliculas}">
 		<table class="table table-hover">
 			<tr>
-				<th scope="col">Película</th>
-				<th scope="col">Nombre</th>
+				<th scope="col"><spring:message code="label.pelicula" /></th>
+				<th scope="col"><spring:message code="label.name" /></th>
 			</tr>
 			<!-- lista de documentos que esta abajo 
 se mando como documentList
@@ -143,7 +148,7 @@ cada uno de los elementos del documentList es un document
 			</c:forEach>
 		</table>
 	</c:if>
-</div class="jumbotron">	
+</div>	
 		<!-- code es lo de internacionalizacion -->
 	<h2 class="display-4">
 		<spring:message code="label.title" />

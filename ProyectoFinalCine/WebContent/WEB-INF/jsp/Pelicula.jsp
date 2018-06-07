@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -61,35 +62,35 @@
 		<hr>
 		<img src="${pageContext.request.contextPath}/img/${pelicula.idPelicula}.jpg" class="img-thumbnail resize" alt="${pelicula.nombre}" />
 		<p>
-			<b class="text-info">Nombre Película: </b> ${pelicula.nombre}
+			<b class="text-info"><spring:message code="label.namemovie" /></b> ${pelicula.nombre}
 		</p>
 		<p>
-			<b class="text-info">Clasificación: </b>${pelicula.clasificacion}</p>
+			<b class="text-info"><spring:message code="label.clasification" /></b>${pelicula.clasificacion}</p>
 		<p>
-			<b class="text-info">Versión: </b>${pelicula.version}</p>
+			<b class="text-info"><spring:message code="label.version" /></b>${pelicula.version}</p>
 		<p>
-			<b class="text-info">Sala: </b>${pelicula.sala}</p>
+			<b class="text-info"><spring:message code="label.room" /></b>${pelicula.sala}</p>
 		<p>
-			<b class="text-info">Lugar: </b>${pelicula.lugar}</p>
+			<b class="text-info"><spring:message code="label.place" /></b>${pelicula.lugar}</p>
 		<div class="ui-widget">
-			<b class="text-info">Selecciona otro lugar: </b> <input type="text" id="tags">
+			<b class="text-info"><spring:message code="label.selectplace" /></b> <input type="text" id="tags">
 		</div>
 		<p>
-			<b class="text-info">Horario: </b>${pelicula.horario}</p>
+			<b class="text-info"><spring:message code="label.hour" /></b>${pelicula.horario}</p>
 		<p>
-			<b class="text-info">Precio: </b>${pelicula.precio}</p>
+			<b class="text-info"><spring:message code="label.price" /></b>${pelicula.precio}</p>
 		<p>
-			<b class="text-info">Fecha: </b>${pelicula.fecha}</p>
+			<b class="text-info"><spring:message code="label.date" /></b>${pelicula.fecha}</p>
 		<p>
-			<b class="text-info">Selecciona otra fecha:</b> <input type="text"
+			<b class="text-info"><spring:message code="label.otherdate" /></b> <input type="text"
 				id="datepicker">
 		</p>
 		<p>
-			<b class="text-info">Ubicación del cine:</b>
+			<b class="text-info"><spring:message code="label.ubicacioncine" /></b>
 		</p>
 		<div id="googleMap" style="width: 100%; height: 400px;"></div>
 
-		<form:form method="POST" action="asientos.html">
+		<form:form method="POST" action="${pageContext.request.contextPath}/asientos.html">
 			<input class="btn btn-primary" type="submit" value="Continuar" />
 		</form:form>
 	</div>

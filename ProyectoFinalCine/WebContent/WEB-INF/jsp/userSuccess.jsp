@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,43 +11,43 @@
 </head>
 <body>
 	<div class="container">
-		<h1>¡Ya tienes tus boletos!</h1>
-		<h2>Detalle de la Compra</h2>
+		<h1><spring:message code="label.tienesboletos" /></h1>
+		<h2><spring:message code="label.detallecompra" /></h2>
 		<hr>
 		<p>
-			<b class="text-info">Nombre Usuario: </b> ${usuario.nombre}
+			<b class="text-info"><spring:message code="label.nombreusuario" /></b> ${usuario.nombre}
 		</p>
 		<p>
-			<b class="text-info">Correo: </b>${usuario.correo}
+			<b class="text-info"><spring:message code="label.correo" /></b>${usuario.correo}
 		</p>
 		<p>
-			<b class="text-info">No. de Tarjeta: </b>${usuario.numTarjeta}
+			<b class="text-info"><spring:message code="label.numtarjeta" /></b>${usuario.numTarjeta}
 		</p>
 		<p>
-			<b class="text-info">Película: </b> ${nombrePelicula}
+			<b class="text-info"><spring:message code="label.pelicula" /></b> ${nombrePelicula}
 		</p>
 		<p>
-			<b class="text-info">Cine: </b>${cine}
+			<b class="text-info"><spring:message code="label.cine" /></b>${cine}
 		</p>
 		<p>
-			<b class="text-info">Sala: </b>${sala}</p>
+			<b class="text-info"><spring:message code="label.room" /></b>${sala}</p>
 		<p>
-			<b class="text-info">Asientos: </b>${asientos}
+			<b class="text-info"><spring:message code="label.asientos" /></b>${asientos}
 		</p>
 		<p>
-			<b class="text-info">Fecha: </b>${fecha}
+			<b class="text-info"><spring:message code="label.date" /></b>${fecha}
 		</p>
 		<p>
-			<b class="text-info">Hora: </b>${horario}
+			<b class="text-info"><spring:message code="label.hour" /></b>${horario}
 		</p>
 		<p>
-			<b class="text-info">Código de confirmación: </b>ABCD-1234
+			<b class="text-info"><spring:message code="label.confirmacion" /></b>ABCD-1234
 		</p>
 		<p>
-			<b class="text-info">#Boletos: </b>${cantidadBoletos}
+			<b class="text-info"><spring:message code="label.numeroboletos" /></b>${cantidadBoletos}
 		</p>
 		<p>
-			<b class="text-info">Precio: </b>$${total}
+			<b class="text-info"><spring:message code="label.price" /></b>$${total}
 		</p>
 	</div>
 </body>
