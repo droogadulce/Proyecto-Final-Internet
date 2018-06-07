@@ -13,7 +13,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `cine`
 --
-
+CREATE database cine;
+USE cine;
 -- --------------------------------------------------------
 
 --
@@ -118,3 +119,6 @@ ALTER TABLE `Pelicula`
 --
 ALTER TABLE `Usuario`
   MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT;
+  
+create user 'mayra'@'localhost' identified by 'welce';
+grant all privileges on cine.* to mayra@localhost;
